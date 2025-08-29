@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wannzty</title>
+  <style>
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+    body {
+      background: #fafafa;
+      color: #333;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                  url("aaa 1.jpg") center/cover no-repeat;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+      white-space: nowrap;
+      border-right: 3px solid white;
+      width: 22ch;
+      overflow: hidden;
+      animation: typing 4s steps(22), blink 0.7s step-end infinite alternate, float 3s ease-in-out infinite;
+    }
+    .hero p {
+      font-size: 18px;
+      margin-top: 10px;
+      opacity: 0;
+      animation: fadeUp 2s ease forwards;
+      animation-delay: 4s;
+    }
+    @keyframes typing {
+      from {width: 0}
+      to {width: 22ch}
+    }
+    @keyframes blink {
+      50% {border-color: transparent}
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0px); }
+    }
+
+    /* Header */
+    header {
+      background: #4CAF50;
+      color: white;
+      padding: 15px 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: bold;
+      position: relative;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: yellow;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    section h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    section h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #4CAF50;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    /* Tentang */
+    #tentang p {
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+      font-size: 18px;
+    }
+
+    /* Galeri */
+    #galeri {
+      background: #f9f9f9;
+    }
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      max-width: 250px;
+      transition: transform 0.4s, box-shadow 0.4s;
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    .card.show {
+      opacity: 1;
+      transform: scale(1);
+      transition: 0.6s ease-in-out;
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .card img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Quotes */
+    #quotes {
+      background: linear-gradient(135deg, #4CAF50, #66bb6a);
+      color: white;
+      padding: 80px 20px;
+    }
+    #quotes p {
+      font-size: 22px;
+      font-style: italic;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+      font-size: 14px;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes fadeUp {
+      from {opacity: 0; transform: translateY(40px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Wannzty</h1>
+    <p>Website kecil kami untuk menyimpan cerita & kenangan indah ✨</p>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <a href="#tentang">Tentang</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#quotes">Quotes</a>
+    </nav>
+  </header>
+
+  <!-- Tentang Kami -->
+  <section id="tentang">
+    <h2>Tentang Kami</h2>
+    <p>
+      Kami adalah Wannzty 🌸, dua orang yang memutuskan membuat website ini sebagai ruang
+      kecil untuk menyimpan cerita perjalanan, tawa, dan kenangan.  
+      <br><br>
+      Website ini bukan hanya sekadar kumpulan foto, tapi juga bentuk penghargaan untuk
+      semua momen yang sudah kita lewati. Setiap kenangan, sekecil apapun, tetap berharga
+      untuk dikenang.  
+      <br><br>
+      Semoga website ini bisa jadi pengingat indah bahwa kita pernah ada di sini, bersama.
+    </p>
+  </section>
+
+  <!-- Galeri -->
+  <section id="galeri">
+    <h2>Galeri</h2>
+    <div class="cards">
+      <div class="card"><img src="aaa 1.jpg" alt="Kenangan 1"></div>
+      <div class="card"><img src="aaa 2.jpg" alt="Kenangan 2"></div>
+      <div class="card"><img src="aaa 3.jpg" alt="Kenangan 3"></div>
+      <div class="card"><img src="aaa 4.jpg" alt="Kenangan 4"></div>
+      <div class="card"><img src="aaa 5.jpg" alt="Kenangan 5"></div>
+    </div>
+  </section>
+
+  <!-- Quotes -->
+  <section id="quotes">
+    <h2>Pesan</h2>
+    <p>
+      "Kenangan terbaik bukanlah tentang tempat atau waktu, tapi tentang dengan siapa kita menjalaninya."
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 230823 - Wannzty</p>
+  </footer>
+
+  <script>
+    // animasi muncul saat scroll
+    const sections = document.querySelectorAll("section");
+    const cards = document.querySelectorAll(".card");
+
+    window.addEventListener("scroll", () => {
+      sections.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 100){
+          sec.classList.add("show");
+        }
+      });
+
+      cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 50){
+          card.classList.add("show");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
